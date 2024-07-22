@@ -1,0 +1,8 @@
+/var/lib/monarc/releases/MonarcAppFO-v2.12.7-p4/node_modules/ng_client/src/translations.js
+
+/do
+/var/lib/monarc/releases/MonarcAppFO-v2.12.7-p4/wsl/public/js/translations.js
+
+/var/lib/monarc/releases/MonarcAppFO-v2.12.7-p4/public/js/translations.js
+
+	Correio eletrónico
