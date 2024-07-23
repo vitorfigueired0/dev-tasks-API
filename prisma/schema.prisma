@@ -13,3 +13,19 @@ model User {
   firstName String @default("")
   lastName  String @default("")
 }
+
+model Tasks {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String   @default("")
+  description String   @default("")
+  createdAt   DateTime
+  status      Status
+}
+
+enum Status {
+  WAITING
+  IN_PROGRESS
+  FINISHED
+}
+
+//DATABASE_URL="mongodb://root:example@localhost:27017/main-db?authSource=admin"
