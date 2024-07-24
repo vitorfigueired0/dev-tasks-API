@@ -8,8 +8,9 @@ async function bootstrap() {
   const config = new DocumentBuilder()
   .setTitle('Dev Tasks API')
   .setVersion('1.0.0')
-  .addTag('users')
-  .addTag('Tasks')
+  .addTag('User')
+  .addTag('Task')
+  .addTag('Auth')
   .build();
 
 const document = SwaggerModule.createDocument(app, config);
