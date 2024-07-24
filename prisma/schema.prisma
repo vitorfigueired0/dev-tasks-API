@@ -8,10 +8,12 @@ datasource db {
 }
 
 model User {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  email     String @unique @default("")
-  firstName String @default("")
-  lastName  String @default("")
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  email     String  @unique @default("")
+  firstName String  @default("")
+  lastName  String  @default("")
+  password  String
+  tasks     Tasks[]
 }
 
 model Tasks {
@@ -19,13 +21,24 @@ model Tasks {
   name        String   @default("")
   description String   @default("")
   createdAt   DateTime
+  ownerId     String   @db.ObjectId
+  owner       User     @relation(fields: [ownerId], references: [id])
+  day         DateTime
+  hour        DateTime
   status      Status
+  type        TaskType @default(WITHOUT_DATE)
 }
 
 enum Status {
   WAITING
   IN_PROGRESS
   FINISHED
+}
+
+enum TaskType {
+  ALL_DAY
+  WITHOUT_DATE
+  DATETIME
 }
 
 //DATABASE_URL="mongodb://root:example@localhost:27017/main-db?authSource=admin"
